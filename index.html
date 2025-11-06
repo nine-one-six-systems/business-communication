@@ -387,14 +387,14 @@
     <div id="password-overlay">
         <div id="password-form">
             <h2>Protected Document</h2>
-            <p>Please enter the password to access this document.</p>
+            <p>Please enter your password to access your personalized document.</p>
             <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
             <button id="password-submit">Access Document</button>
             <div id="password-error">Incorrect password. Please try again.</div>
         </div>
     </div>
     
-    <div class="container hidden" id="content">
+    <div class="container hidden" id="content" style="display: none;">
         <h1>Business Communication: Values, Vision, and Ventures</h1>
         
         <!-- Opening Letter Section -->
@@ -622,20 +622,14 @@
     </div>
     
     <script>
-        // Password Protection
+        // Password Protection with Routing
         (function() {
-            const CORRECT_PASSWORD = 'StephenH2717';
-            const SESSION_KEY = 'document_authenticated';
-            
-            function showContent() {
-                const overlay = document.getElementById('password-overlay');
-                const content = document.getElementById('content');
-                
-                if (overlay && content) {
-                    overlay.classList.add('hidden');
-                    content.classList.remove('hidden');
-                }
-            }
+            const PASSWORDS = {
+                'Stephen2717': 'Stephen.html',
+                'Shawn2717': 'Shawn.html',
+                'Kent2717': 'Kent.html',
+                'Greg2717': 'Greg.html'
+            };
             
             function setupPasswordProtection() {
                 const overlay = document.getElementById('password-overlay');
@@ -654,10 +648,9 @@
                 function checkPassword() {
                     const enteredPassword = passwordInput.value.trim();
                     
-                    if (enteredPassword === CORRECT_PASSWORD) {
-                        // Correct password
-                        sessionStorage.setItem(SESSION_KEY, 'true');
-                        showContent();
+                    if (PASSWORDS[enteredPassword]) {
+                        // Correct password - redirect to appropriate page
+                        window.location.href = PASSWORDS[enteredPassword];
                     } else {
                         // Incorrect password
                         errorMessage.style.display = 'block';
@@ -683,12 +676,8 @@
                 });
             }
             
-            // Check if already authenticated
-            if (sessionStorage.getItem(SESSION_KEY) === 'true') {
-                showContent();
-            } else {
-                setupPasswordProtection();
-            }
+            // Always show password form on index page
+            setupPasswordProtection();
         })();
     </script>
 </body>
