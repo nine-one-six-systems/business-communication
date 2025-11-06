@@ -137,10 +137,264 @@
             border-left: 2px solid #e1e4e8;
             margin-top: 15px;
         }
+        
+        /* Password Protection */
+        #password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        #password-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        #password-form h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border: none;
+            padding: 0;
+        }
+        
+        #password-form p {
+            color: #666;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        #password-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e4e8;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        #password-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        #password-submit {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        #password-submit:hover {
+            background: #2980b9;
+        }
+        
+        #password-error {
+            color: #e74c3c;
+            margin-top: 10px;
+            font-size: 14px;
+            display: none;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+            20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+        
+        /* Responsive Design - Tablet */
+        @media screen and (max-width: 1024px) {
+            .container {
+                max-width: 95%;
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            h2 {
+                font-size: 1.6em;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+        }
+        
+        /* Responsive Design - Mobile */
+        @media screen and (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 20px 15px;
+                margin: 0;
+                border-radius: 0;
+            }
+            
+            body {
+                background-color: white;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+                margin-top: 30px;
+                margin-bottom: 15px;
+                padding-bottom: 8px;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+                margin-top: 20px;
+                margin-bottom: 12px;
+            }
+            
+            h4 {
+                font-size: 1.1em;
+            }
+            
+            p {
+                text-align: left;
+                margin-bottom: 12px;
+                font-size: 15px;
+            }
+            
+            .opening-letter {
+                padding: 20px 15px;
+                margin-bottom: 30px;
+            }
+            
+            .values-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .value-item {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            
+            .venture-section {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+            
+            .vision-mission {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .current-status {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            
+            .final-thoughts {
+                padding: 20px 15px;
+                margin-top: 30px;
+            }
+            
+            ul {
+                margin-left: 20px;
+                margin-bottom: 12px;
+            }
+            
+            li {
+                margin-bottom: 6px;
+                font-size: 15px;
+            }
+            
+            .subsection {
+                margin-left: 10px;
+                padding-left: 15px;
+                margin-top: 12px;
+            }
+            
+            #password-form {
+                padding: 30px 25px;
+                margin: 20px;
+            }
+            
+            #password-form h2 {
+                font-size: 1.5em;
+            }
+        }
+        
+        /* Responsive Design - Small Mobile */
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.3em;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            .container {
+                padding: 15px 10px;
+            }
+            
+            .opening-letter,
+            .value-item,
+            .venture-section,
+            .vision-mission,
+            .current-status,
+            .final-thoughts {
+                padding: 15px 12px;
+            }
+            
+            #password-form {
+                padding: 25px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Password Protection Overlay -->
+    <div id="password-overlay">
+        <div id="password-form">
+            <h2>Protected Document</h2>
+            <p>Please enter the password to access this document.</p>
+            <input type="password" id="password-input" placeholder="Enter password" autocomplete="off">
+            <button id="password-submit">Access Document</button>
+            <div id="password-error">Incorrect password. Please try again.</div>
+        </div>
+    </div>
+    
+    <div class="container hidden" id="content">
         <h1>Business Communication: Values, Vision, and Ventures</h1>
         
         <!-- Opening Letter Section -->
@@ -366,6 +620,77 @@
             <p>So thank you for being a part of this and allowing me to partner with you.</p>
         </section>
     </div>
+    
+    <script>
+        // Password Protection
+        (function() {
+            const CORRECT_PASSWORD = 'StephenH2717';
+            const SESSION_KEY = 'document_authenticated';
+            
+            function showContent() {
+                const overlay = document.getElementById('password-overlay');
+                const content = document.getElementById('content');
+                
+                if (overlay && content) {
+                    overlay.classList.add('hidden');
+                    content.classList.remove('hidden');
+                }
+            }
+            
+            function setupPasswordProtection() {
+                const overlay = document.getElementById('password-overlay');
+                const passwordInput = document.getElementById('password-input');
+                const submitButton = document.getElementById('password-submit');
+                const errorMessage = document.getElementById('password-error');
+                
+                if (!overlay || !passwordInput || !submitButton || !errorMessage) {
+                    return;
+                }
+                
+                // Focus on input when page loads
+                passwordInput.focus();
+                
+                // Handle form submission
+                function checkPassword() {
+                    const enteredPassword = passwordInput.value.trim();
+                    
+                    if (enteredPassword === CORRECT_PASSWORD) {
+                        // Correct password
+                        sessionStorage.setItem(SESSION_KEY, 'true');
+                        showContent();
+                    } else {
+                        // Incorrect password
+                        errorMessage.style.display = 'block';
+                        passwordInput.value = '';
+                        passwordInput.focus();
+                        
+                        // Add shake animation
+                        overlay.style.animation = 'shake 0.5s';
+                        setTimeout(() => {
+                            overlay.style.animation = '';
+                        }, 500);
+                    }
+                }
+                
+                // Submit button click
+                submitButton.addEventListener('click', checkPassword);
+                
+                // Enter key press
+                passwordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            }
+            
+            // Check if already authenticated
+            if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+                showContent();
+            } else {
+                setupPasswordProtection();
+            }
+        })();
+    </script>
 </body>
 </html>
 
