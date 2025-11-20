@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Communication - Open</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
@@ -12,130 +14,166 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fafafa;
+            padding: 60px 20px;
         }
         
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 80px 60px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
         
         h1 {
-            color: #2c3e50;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #3498db;
-            font-size: 2.5em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #1a1a1a;
+            margin-bottom: 60px;
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
         }
         
         h2 {
-            color: #34495e;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e1e4e8;
-            font-size: 1.8em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #1a1a1a;
+            margin-top: 64px;
+            margin-bottom: 24px;
+            font-size: 2em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
         
         h3 {
-            color: #34495e;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-size: 1.4em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #2c2c2c;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            font-size: 1.5em;
+            font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         h4 {
-            color: #34495e;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #2c2c2c;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            font-size: 1.25em;
             font-weight: 600;
         }
         
         p {
-            margin-bottom: 15px;
-            text-align: justify;
+            margin-bottom: 20px;
+            text-align: left;
+            font-size: 1.0625em;
+            color: #4a4a4a;
+            line-height: 1.75;
         }
         
         .opening-letter {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-left: 4px solid #3498db;
-            margin-bottom: 40px;
-            border-radius: 5px;
+            background: #f8f9fa;
+            padding: 40px;
+            margin-bottom: 64px;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
         }
         
         .values-section {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 48px 0;
         }
         
         .value-item {
-            background-color: #f8f9fa;
-            padding: 20px;
+            background: #ffffff;
+            padding: 32px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border-color: #ff6b35;
         }
         
         .value-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.1em;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 1.375em;
+            letter-spacing: -0.01em;
         }
         
         .venture-section {
-            background-color: #fff;
-            padding: 25px;
-            margin: 30px 0;
-            border: 1px solid #e1e4e8;
-            border-radius: 8px;
+            background: #ffffff;
+            padding: 40px;
+            margin: 48px 0;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         
         .vision-mission {
-            background-color: #f0f7ff;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            background: #f8f9fa;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
         }
         
         .current-status {
-            background-color: #f8f9fa;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            background: #f8f9fa;
+            padding: 32px;
+            margin: 32px 0;
+            border-radius: 12px;
+            border-left: 4px solid #ff6b35;
         }
         
         ul {
-            margin-left: 30px;
-            margin-bottom: 15px;
+            margin-left: 24px;
+            margin-bottom: 24px;
+            padding-left: 0;
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            line-height: 1.75;
+            color: #4a4a4a;
+            position: relative;
+            padding-left: 8px;
+        }
+        
+        li::marker {
+            color: #ff6b35;
         }
         
         .final-thoughts {
-            background-color: #f0f7ff;
-            padding: 25px;
-            margin-top: 40px;
-            border-radius: 8px;
-            border: 2px solid #3498db;
+            background: #f8f9fa;
+            padding: 48px;
+            margin-top: 64px;
+            border-radius: 12px;
+            border: 2px solid #ff6b35;
         }
         
         .subsection {
-            margin-left: 20px;
-            padding-left: 20px;
-            border-left: 2px solid #e1e4e8;
-            margin-top: 15px;
+            margin-left: 24px;
+            padding-left: 24px;
+            border-left: 3px solid #ff6b35;
+            margin-top: 24px;
+            padding-top: 4px;
         }
         
         /* Password Protection */
@@ -145,75 +183,93 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 10000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
         
         #password-form {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            background: #ffffff;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 90%;
         }
         
         #password-form h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            font-family: 'Space Grotesk', sans-serif;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 1.875em;
             border: none;
             padding: 0;
+            font-weight: 600;
+            letter-spacing: -0.02em;
         }
         
         #password-form p {
             color: #666;
-            margin-bottom: 25px;
+            margin-bottom: 32px;
             text-align: center;
+            font-size: 1em;
+            line-height: 1.6;
         }
         
         #password-input {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e1e4e8;
-            border-radius: 6px;
+            padding: 14px 16px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
             font-size: 16px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s ease;
+            background: #ffffff;
         }
         
         #password-input:focus {
             outline: none;
-            border-color: #3498db;
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
         
         #password-submit {
             width: 100%;
-            padding: 12px;
-            background: #3498db;
+            padding: 14px;
+            background: #ff6b35;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 16px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
+            transition: all 0.2s ease;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
         }
         
         #password-submit:hover {
-            background: #2980b9;
+            background: #ff7d4d;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        #password-submit:active {
+            transform: translateY(0);
         }
         
         #password-error {
-            color: #e74c3c;
-            margin-top: 10px;
+            color: #e63946;
+            margin-top: 16px;
             font-size: 14px;
             display: none;
+            font-weight: 500;
         }
         
         .hidden {
@@ -224,6 +280,82 @@
             0%, 100% { transform: translateX(0); }
             10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
             20%, 40%, 60%, 80% { transform: translateX(10px); }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .signature-area {
+            margin-top: 64px;
+            padding-top: 48px;
+            border-top: 1px solid #e8e8e8;
+            text-align: center;
+        }
+        
+        .signature-line {
+            margin-top: 40px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.125em;
+            color: #2c2c2c;
+            letter-spacing: 0.01em;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 16px;
+            }
+            
+            .container {
+                padding: 48px 32px;
+                border-radius: 12px;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 1.75em;
+                margin-top: 48px;
+            }
+            
+            .opening-letter,
+            .venture-section {
+                padding: 32px 24px;
+            }
+            
+            .value-item {
+                padding: 24px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 40px;
+            }
+            
+            #password-overlay {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -416,6 +548,11 @@
             <p>We recognize this vision is massive. There will be moments when the easy path calls. In those moments, we return to our foundations: People First and Courage. These guide every decision, every pivot, every breakthrough.</p>
             <p>We're grateful you're choosing the hard road with us, thank you - and thank you for allowing us to partner with YOU.</p>
             <p>Welcome to the revolution. Let's build.</p>
+            
+            <div class="signature-area">
+                <div class="signature-line">With gratitude and anticipation,</div>
+                <div class="signature-line" style="margin-top: 48px; font-size: 1.125em; color: #ff6b35; font-weight: 600;">The Team</div>
+            </div>
         </section>
     </div>
     
